@@ -1,7 +1,7 @@
 /*
 @theme smart-weber-hybrid
 @author Gemini
-@version 1.0.0
+@version 2.0.0
 */
 
 /* --- Font Imports (from Smart Goals) --- */
@@ -10,20 +10,21 @@
 /* --- Default Settings --- */
 @paginate true
 
-/* --- Root Variables (from Smart Goals) --- */
+/* --- Root Variables (Full Smart Goals Palette) --- */
 :root {
     /* Colors */
     --color-background: #fbfbfb;
     --color-text: #232323;
-    --color-h1: #232323;
-    --color-h2: #3280ae; /* Primary Blue */
-    --color-h3: #61b6a1; /* Teal */
-    --color-link: #3280ae;
-    --color-strong: #e45a35; /* Orange Accent */
-    --color-em-text: #fbfbfb;
-    --color-em-bg: #e45a35;
-    --color-blockquote-border: #e0e0e0;
-    --color-pagination-text: #838383;
+    --color-dark-gray: #232323;
+    --color-white: #fbfbfb;
+    --color-light-gray-1: #f1f1f1;
+    --color-light-gray-2: #e0e0e0;
+    --color-medium-gray: #838383;
+    --color-primary-blue: #3280ae;
+    --color-accent-orange: #e45a35;
+    --color-accent-teal: #61b6a1;
+    --color-accent-yellow: #e9b545;
+    --color-accent-green: #8cb847;
 
     /* Fonts */
     --font-primary: 'Lexend Mega', sans-serif;
@@ -39,18 +40,18 @@ section {
     padding: 2rem 2.5rem;
 }
 
-/* --- Element Styles --- */
+/* --- Element Styles (Using Full Palette) --- */
 a {
-    color: var(--color-link);
+    color: var(--color-primary-blue);
 }
 
 strong {
-    color: var(--color-strong) !important;
+    color: var(--color-accent-orange) !important;
 }
 
 em {
-    color: var(--color-em-text);
-    background-color: var(--color-em-bg);
+    color: var(--color-dark-gray);
+    background-color: var(--color-accent-yellow);
     padding: 0.1em 0.3em;
     border-radius: 4px;
 }
@@ -61,20 +62,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    color: var(--color-h1);
-    border-bottom: 2px solid var(--color-h2);
+    color: var(--color-dark-gray);
+    border-bottom: 2px solid var(--color-primary-blue);
     margin-bottom: 3.5%;
-    letter-spacing: 0.1pt;
 }
-
 h2 {
-    color: var(--color-h2);
-    font-family: var(--font-primary); /* Using primary for consistency */
+    color: var(--color-primary-blue);
     font-size: 32pt;
 }
-
 h3 {
-    color: var(--color-h3);
+    color: var(--color-accent-teal);
+}
+h4 {
+    color: var(--color-accent-green);
 }
 
 li {
@@ -85,7 +85,7 @@ li {
 
 blockquote {
     color: var(--color-text);
-    border-left: 4px solid var(--color-blockquote-border);
+    border-left: 4px solid var(--color-primary-blue);
     padding-left: 1em;
 }
 
@@ -93,29 +93,29 @@ figcaption {
     font-size: 0.8em;
     font-family: var(--font-secondary);
     text-align: center;
-    color: var(--color-pagination-text);
+    color: var(--color-medium-gray);
 }
 
-/* --- Custom Slide Classes (Weber Structure, Smart Goals Style) --- */
+/* --- Custom Slide Classes (Weber Structure, Full Smart Goals Style) --- */
 
 /* Title Page (Styled like Smart Goals 'lead' slide) */
 section.titlepage {
-    background-color: #232323; /* Dark Gray */
+    background-color: var(--color-dark-gray);
     text-align: center;
     justify-content: center;
 }
 section.titlepage h1, section.titlepage .title {
-    color: #fbfbfb !important;
+    color: var(--color-white) !important;
     text-align: center !important;
     border: none;
 }
 section.titlepage h2, section.titlepage .subtitle {
-    color: #e0e0e0 !important;
+    color: var(--color-light-gray-2) !important;
     text-align: center !important;
     font-weight: 400;
 }
 section.titlepage h3, section.titlepage .author, section.titlepage .date, section.titlepage .organization {
-    color: #3280ae !important;
+    color: var(--color-primary-blue) !important;
     text-align: center !important;
     font-size: 0.9em;
 }
@@ -143,10 +143,10 @@ section.transition strong {
     font-weight: 900;
 }
 
-/* Citation Slide (Styled like Smart Goals 'quote' slide) */
+/* Citation Slide (Now uses Green) */
 section.cite {
-    background-color: #61b6a1; /* Teal */
-    color: #fbfbfb;
+    background-color: var(--color-accent-green);
+    color: var(--color-white);
     font-weight: 400 !important;
     text-align: center;
     justify-content: center;
@@ -158,36 +158,39 @@ section.cite p {
     padding: 50pt 100px;
 }
 section.cite strong {
-    color: #fbfbfb; /* White text on colored background */
+    color: var(--color-white);
     background-color: rgba(0,0,0,0.1);
     padding: 0.1em 0.3em;
     border-radius: 4px;
 }
 
-/* Bibliography Slide */
+/* Bibliography Slide (Now uses light gray bg and teal headings) */
 section.biblio {
-    background-color: #f1f1f1; /* Light Gray */
+    background-color: var(--color-light-gray-1);
 }
 section.biblio h1 {
     font-size: 36px;
+    border-bottom-color: var(--color-accent-teal);
+    color: var(--color-accent-teal);
 }
 section.biblio li {
     font-size: 20pt !important;
     line-height: 24pt;
 }
 
-/* --- Table Styles (Smart Goals Style) --- */
+/* --- Table Styles (Header now uses Teal) --- */
 table {
     width: 100%;
     border-collapse: collapse;
 }
 th {
     font-family: var(--font-primary);
-    background-color: #e0e0e0;
+    background-color: var(--color-accent-teal);
+    color: var(--color-white);
     padding: 12px;
 }
 td {
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--color-light-gray-2);
     font-family: var(--font-secondary);
     padding: 12px;
     color: var(--color-text);
@@ -198,7 +201,7 @@ tr:nth-child(even) {
 
 /* --- Pagination --- */
 .marp-pagination {
-    color: var(--color-pagination-text);
+    color: var(--color-medium-gray);
     font-size: 0.8em;
     width: auto;
     right: 30px;
