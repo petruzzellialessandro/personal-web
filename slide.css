@@ -1,189 +1,208 @@
 /*
-@theme smart-goals
+@theme smart-weber-hybrid
 @author Gemini
-@version 1.2.1
+@version 1.0.0
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@400;700&family=Epilogue:wght@400;700&display=swap');
+/* --- Font Imports (from Smart Goals) --- */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@400;700&family=Lexend:wght@400;700&display=swap');
 
-/* This enables pagination (e.g., "1 / 10") on all slides by default */
+/* --- Default Settings --- */
 @paginate true
 
+/* --- Root Variables (from Smart Goals) --- */
 :root {
-    --color-dark-gray: #232323;
-    --color-white: #fbfbfb;
-    --color-light-gray-1: #f1f1f1;
-    --color-light-gray-2: #e0e0e0;
-    --color-medium-gray: #838383;
-    --color-primary-blue: #3280ae;
-    --color-accent-orange: #e45a35;
-    --color-accent-teal: #61b6a1;
-    --color-accent-yellow: #e9b545;
-    --color-accent-green: #8cb847;
+    /* Colors */
+    --color-background: #fbfbfb;
+    --color-text: #232323;
+    --color-h1: #232323;
+    --color-h2: #3280ae; /* Primary Blue */
+    --color-h3: #61b6a1; /* Teal */
+    --color-link: #3280ae;
+    --color-strong: #e45a35; /* Orange Accent */
+    --color-em-text: #fbfbfb;
+    --color-em-bg: #e45a35;
+    --color-blockquote-border: #e0e0e0;
+    --color-pagination-text: #838383;
 
+    /* Fonts */
     --font-primary: 'Lexend Mega', sans-serif;
-    --font-secondary: 'Epilogue', sans-serif;
-
-    --spacing-unit: 1rem;
+    --font-secondary: 'Lexend', sans-serif;
 }
 
 /* --- Global Slide Styles --- */
 section {
-    background-color: var(--color-white);
+    background-color: var(--color-background);
     font-family: var(--font-secondary);
-    color: var(--color-dark-gray);
-    padding: calc(var(--spacing-unit) * 4);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Default alignment is top */
-}
-
-a {
-    color: var(--color-primary-blue);
+    color: var(--color-text);
+    font-size: 30px;
+    padding: 2rem 2.5rem;
 }
 
 /* --- Element Styles --- */
+a {
+    color: var(--color-link);
+}
+
+strong {
+    color: var(--color-strong) !important;
+}
+
+em {
+    color: var(--color-em-text);
+    background-color: var(--color-em-bg);
+    padding: 0.1em 0.3em;
+    border-radius: 4px;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-primary);
-    color: var(--color-dark-gray);
+    font-kerning: auto;
 }
 
 h1 {
-    font-size: 3rem;
-    text-align: center;
+    color: var(--color-h1);
+    border-bottom: 2px solid var(--color-h2);
+    margin-bottom: 3.5%;
+    letter-spacing: 0.1pt;
 }
 
 h2 {
-    font-size: 2.5rem;
-    color: var(--color-primary-blue);
-    margin-bottom: calc(var(--spacing-unit) * 2);
+    color: var(--color-h2);
+    font-family: var(--font-primary); /* Using primary for consistency */
+    font-size: 32pt;
 }
 
-p, ul, ol {
-    font-size: 1.2rem;
-    line-height: 1.6;
+h3 {
+    color: var(--color-h3);
+}
+
+li {
+    margin: 0.25em 0;
+    line-height: 1.2em;
+    font-size: 1.1em;
 }
 
 blockquote {
-    border-left: 5px solid var(--color-primary-blue);
-    padding: var(--spacing-unit) calc(var(--spacing-unit) * 2);
-    margin: calc(var(--spacing-unit) * 2) 0;
+    color: var(--color-text);
+    border-left: 4px solid var(--color-blockquote-border);
+    padding-left: 1em;
 }
 
-/* --- Default Slide (Title Slide) --- */
-section.lead {
-    background-color: var(--color-dark-gray);
-    text-align: center;
-    justify-content: center;
-}
-
-section.lead h1 {
-    color: var(--color-white);
-}
-
-section.lead p {
-    color: var(--color-light-gray-2);
-    font-size: 1.25rem;
-}
-
-
-/* --- Custom Slide Classes --- */
-
-section.quote {
-    background-color: var(--color-accent-teal);
-    color: var(--color-white);
-    text-align: center;
-    justify-content: center;
-}
-
-section.quote blockquote {
-    border: none;
-    font-size: 2rem;
-    font-style: italic;
-    margin: 0;
-}
-
-section.quote footer {
-    font-family: var(--font-primary);
-    font-size: 1.2rem;
-    margin-top: calc(var(--spacing-unit) * 2);
-    font-style: normal;
-}
-
-section.two-columns {
-    column-count: 2;
-    column-gap: calc(var(--spacing-unit) * 4);
-}
-
-section.two-columns > h1,
-section.two-columns > h2 {
-    column-span: all;
-    text-align: center;
-}
-
-section.section-header {
-    justify-content: center;
-}
-
-section.section-header h1 {
-    font-size: 5rem;
-    color: var(--color-primary-blue);
-    font-weight: 700;
-    text-align: left;
-    margin: 0;
-}
-
-section.section-header h2 {
-    font-size: 2.5rem;
-    color: var(--color-dark-gray);
-    text-align: left;
-    margin-top: var(--spacing-unit);
-}
-
-/* --- Layout Utilities --- */
-
-section.footer-content {
-    justify-content: flex-end;
-}
-
-section.header-content {
-    justify-content: flex-start;
-}
-
-/* --- Pagination and Footer Elements --- */
-
-.marp-pagination {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    text-align: center;
+figcaption {
+    font-size: 0.8em;
     font-family: var(--font-secondary);
-    color: var(--color-medium-gray);
-    font-size: 0.9rem;
+    text-align: center;
+    color: var(--color-pagination-text);
 }
 
-/* Corrected Rule for Progress Dots */
-section.with-progress-dots::after {
-    content: '';
-    position: absolute;
-    bottom: 45px; /* Position dots above the pagination text */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 200px;
-    height: 10px;
-    background-image:
-        radial-gradient(circle, var(--color-accent-green) 4px, transparent 5px),
-        radial-gradient(circle, var(--color-accent-teal) 4px, transparent 5px),
-        radial-gradient(circle, var(--color-accent-yellow) 4px, transparent 5px),
-        radial-gradient(circle, var(--color-accent-orange) 4px, transparent 5px),
-        radial-gradient(circle, var(--color-primary-blue) 4px, transparent 5px),
-        radial-gradient(circle, var(--color-light-gray-2) 4px, transparent 5px),
-        radial-gradient(circle, var(--color-light-gray-2) 4px, transparent 5px),
-        radial-gradient(circle, var(--color-light-gray-2) 4px, transparent 5px),
-        radial-gradient(circle, var(--color-light-gray-2) 4px, transparent 5px),
-        radial-gradient(circle, var(--color-light-gray-2) 4px, transparent 5px);
-    background-repeat: no-repeat;
-    background-size: 20px 10px;
-    background-position: 0 0, 20px 0, 40px 0, 60px 0, 80px 0, 100px 0, 120px 0, 140px 0, 160px 0, 180px 0;
+/* --- Custom Slide Classes (Weber Structure, Smart Goals Style) --- */
+
+/* Title Page (Styled like Smart Goals 'lead' slide) */
+section.titlepage {
+    background-color: #232323; /* Dark Gray */
+    text-align: center;
+    justify-content: center;
+}
+section.titlepage h1, section.titlepage .title {
+    color: #fbfbfb !important;
+    text-align: center !important;
+    border: none;
+}
+section.titlepage h2, section.titlepage .subtitle {
+    color: #e0e0e0 !important;
+    text-align: center !important;
+    font-weight: 400;
+}
+section.titlepage h3, section.titlepage .author, section.titlepage .date, section.titlepage .organization {
+    color: #3280ae !important;
+    text-align: center !important;
+    font-size: 0.9em;
+}
+
+/* Columns Layout */
+section.columns {
+    column-count: 2;
+    column-gap: 2rem;
+}
+section.columns > h1, section.columns > h2 {
+    column-span: all;
+}
+
+/* Transition Slide */
+section.transition {
+    text-align: center;
+    justify-content: center;
+}
+section.transition a {
+    font-size: 1.7em;
+    font-weight: 900;
+}
+section.transition strong {
+    font-size: 1.1em;
+    font-weight: 900;
+}
+
+/* Citation Slide (Styled like Smart Goals 'quote' slide) */
+section.cite {
+    background-color: #61b6a1; /* Teal */
+    color: #fbfbfb;
+    font-weight: 400 !important;
+    text-align: center;
+    justify-content: center;
+}
+section.cite p {
+    font-family: var(--font-secondary);
+    font-size: 1.5em;
+    line-height: 1.4em;
+    padding: 50pt 100px;
+}
+section.cite strong {
+    color: #fbfbfb; /* White text on colored background */
+    background-color: rgba(0,0,0,0.1);
+    padding: 0.1em 0.3em;
+    border-radius: 4px;
+}
+
+/* Bibliography Slide */
+section.biblio {
+    background-color: #f1f1f1; /* Light Gray */
+}
+section.biblio h1 {
+    font-size: 36px;
+}
+section.biblio li {
+    font-size: 20pt !important;
+    line-height: 24pt;
+}
+
+/* --- Table Styles (Smart Goals Style) --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th {
+    font-family: var(--font-primary);
+    background-color: #e0e0e0;
+    padding: 12px;
+}
+td {
+    border: 1px solid #e0e0e0;
+    font-family: var(--font-secondary);
+    padding: 12px;
+    color: var(--color-text);
+}
+tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+/* --- Pagination --- */
+.marp-pagination {
+    color: var(--color-pagination-text);
+    font-size: 0.8em;
+    width: auto;
+    right: 30px;
+    left: auto;
+    top: auto;
+    bottom: 20px;
 }
