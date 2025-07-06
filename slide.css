@@ -1,0 +1,146 @@
+/*
+@theme smart-goals
+@author Gemini
+@version 1.0.0
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@400;700&family=Epilogue:wght@400;700&display=swap');
+
+:root {
+    --color-dark-gray: #232323;
+    --color-white: #fbfbfb;
+    --color-light-gray-1: #f1f1f1;
+    --color-light-gray-2: #e0e0e0;
+    --color-medium-gray: #838383;
+    --color-primary-blue: #3280ae;
+    --color-accent-orange: #e45a35;
+    --color-accent-teal: #61b6a1;
+    --color-accent-yellow: #e9b545;
+    --color-accent-green: #8cb847;
+
+    --font-primary: 'Lexend Mega', sans-serif;
+    --font-secondary: 'Epilogue', sans-serif;
+
+    --spacing-unit: 1rem;
+}
+
+/* --- Global Slide Styles --- */
+section {
+    background-color: var(--color-white);
+    font-family: var(--font-secondary);
+    color: var(--color-dark-gray);
+    padding: calc(var(--spacing-unit) * 4);
+}
+
+a {
+    color: var(--color-primary-blue);
+}
+
+/* --- Element Styles --- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    color: var(--color-dark-gray);
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--color-primary-blue);
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+p, ul, ol {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+blockquote {
+    border-left: 5px solid var(--color-primary-blue);
+    padding: var(--spacing-unit) calc(var(--spacing-unit) * 2);
+    margin: calc(var(--spacing-unit) * 2) 0;
+}
+
+/* --- Default Slide (Title Slide) --- */
+/* This style applies to the first slide or any slide with only a h1 and p */
+section.lead {
+    background-color: var(--color-dark-gray);
+    text-align: center;
+}
+
+section.lead h1 {
+    color: var(--color-white);
+}
+
+section.lead p {
+    color: var(--color-light-gray-2);
+    font-size: 1.25rem;
+}
+
+
+/* --- Custom Slide Classes (use with <!-- _class: [name] -->) --- */
+
+/* Quote Slide 
+  Usage: <!-- _class: quote --> 
+*/
+section.quote {
+    background-color: var(--color-accent-teal);
+    color: var(--color-white);
+    text-align: center;
+    justify-content: center;
+}
+
+section.quote blockquote {
+    border: none;
+    font-size: 2rem;
+    font-style: italic;
+    margin: 0;
+}
+
+section.quote footer {
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+    margin-top: calc(var(--spacing-unit) * 2);
+    font-style: normal;
+}
+
+/* Two-Column Slide 
+  Usage: <!-- _class: two-columns --> 
+  This will place the content (e.g., lists, paragraphs) into two columns.
+*/
+section.two-columns {
+    column-count: 2;
+    column-gap: calc(var(--spacing-unit) * 4);
+}
+
+section.two-columns > h1,
+section.two-columns > h2 {
+    column-span: all;
+    text-align: center;
+}
+
+/* Section Header Slide 
+  Usage: <!-- _class: section-header --> 
+         <!-- _backgroundImage: "url('your-image.jpg')" -->
+         <!-- _backgroundSize: cover -->
+         
+  This class styles the text. You MUST add a background image manually.
+*/
+section.section-header h1 {
+    font-size: 5rem;
+    color: var(--color-primary-blue);
+    font-weight: 700;
+    text-align: left;
+    margin: 0;
+}
+
+section.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--color-dark-gray);
+    text-align: left;
+    margin-top: var(--spacing-unit);
+}
+
