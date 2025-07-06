@@ -1,7 +1,7 @@
 /*
 @theme smart-goals
 @author Gemini
-@version 1.2.0
+@version 1.2.1
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@400;700&family=Epilogue:wght@400;700&display=swap');
@@ -163,13 +163,13 @@ section.header-content {
     font-size: 0.9rem;
 }
 
-/* Adds decorative dots above the page number.
-   Usage: <!-- _class: with-progress-dots -->
-*/
-section.with-progress-dots .marp-pagination::before {
+/* Corrected Rule for Progress Dots */
+section.with-progress-dots::after {
     content: '';
-    display: block;
-    margin: 0 auto 10px; /* Center and add space below */
+    position: absolute;
+    bottom: 45px; /* Position dots above the pagination text */
+    left: 50%;
+    transform: translateX(-50%);
     width: 200px;
     height: 10px;
     background-image:
