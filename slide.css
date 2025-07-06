@@ -1,10 +1,10 @@
 /*
 @theme smart-goals
 @author Gemini
-@version 1.0.0
+@version 1.1.0
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@400;700&family=Epilogue:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@400;700&family=Lexend:wght@400;700&display=swap');
 
 :root {
     --color-dark-gray: #232323;
@@ -30,6 +30,9 @@ section {
     font-family: var(--font-secondary);
     color: var(--color-dark-gray);
     padding: calc(var(--spacing-unit) * 4);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Default alignment is top */
 }
 
 a {
@@ -65,10 +68,10 @@ blockquote {
 }
 
 /* --- Default Slide (Title Slide) --- */
-/* This style applies to the first slide or any slide with only a h1 and p */
 section.lead {
     background-color: var(--color-dark-gray);
     text-align: center;
+    justify-content: center;
 }
 
 section.lead h1 {
@@ -83,9 +86,7 @@ section.lead p {
 
 /* --- Custom Slide Classes (use with <!-- _class: [name] -->) --- */
 
-/* Quote Slide 
-  Usage: <!-- _class: quote --> 
-*/
+/* Quote Slide */
 section.quote {
     background-color: var(--color-accent-teal);
     color: var(--color-white);
@@ -107,10 +108,7 @@ section.quote footer {
     font-style: normal;
 }
 
-/* Two-Column Slide 
-  Usage: <!-- _class: two-columns --> 
-  This will place the content (e.g., lists, paragraphs) into two columns.
-*/
+/* Two-Column Slide */
 section.two-columns {
     column-count: 2;
     column-gap: calc(var(--spacing-unit) * 4);
@@ -122,13 +120,11 @@ section.two-columns > h2 {
     text-align: center;
 }
 
-/* Section Header Slide 
-  Usage: <!-- _class: section-header --> 
-         <!-- _backgroundImage: "url('your-image.jpg')" -->
-         <!-- _backgroundSize: cover -->
-         
-  This class styles the text. You MUST add a background image manually.
-*/
+/* Section Header Slide */
+section.section-header {
+    justify-content: center;
+}
+
 section.section-header h1 {
     font-size: 5rem;
     color: var(--color-primary-blue);
@@ -144,3 +140,19 @@ section.section-header h2 {
     margin-top: var(--spacing-unit);
 }
 
+/* --- Layout Utilities --- */
+
+/* Content at Bottom
+  Usage: <!-- _class: footer-content -->
+*/
+section.footer-content {
+    justify-content: flex-end;
+}
+
+/* Content at Top (Default)
+  Usage: <!-- _class: header-content -->
+  Explicitly aligns content to the top.
+*/
+section.header-content {
+    justify-content: flex-start;
+}
