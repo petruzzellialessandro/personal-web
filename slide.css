@@ -1,10 +1,13 @@
 /*
 @theme smart-goals
 @author Gemini
-@version 1.1.0
+@version 1.2.0
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@400;700&family=Lexend:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@400;700&family=Epilogue:wght@400;700&display=swap');
+
+/* This enables pagination (e.g., "1 / 10") on all slides by default */
+@paginate true
 
 :root {
     --color-dark-gray: #232323;
@@ -19,7 +22,7 @@
     --color-accent-green: #8cb847;
 
     --font-primary: 'Lexend Mega', sans-serif;
-    --font-secondary: 'Lexend', sans-serif;
+    --font-secondary: 'Epilogue', sans-serif;
 
     --spacing-unit: 1rem;
 }
@@ -84,9 +87,8 @@ section.lead p {
 }
 
 
-/* --- Custom Slide Classes (use with <!-- _class: [name] -->) --- */
+/* --- Custom Slide Classes --- */
 
-/* Quote Slide */
 section.quote {
     background-color: var(--color-accent-teal);
     color: var(--color-white);
@@ -108,7 +110,6 @@ section.quote footer {
     font-style: normal;
 }
 
-/* Two-Column Slide */
 section.two-columns {
     column-count: 2;
     column-gap: calc(var(--spacing-unit) * 4);
@@ -120,7 +121,6 @@ section.two-columns > h2 {
     text-align: center;
 }
 
-/* Section Header Slide */
 section.section-header {
     justify-content: center;
 }
@@ -142,17 +142,48 @@ section.section-header h2 {
 
 /* --- Layout Utilities --- */
 
-/* Content at Bottom
-  Usage: <!-- _class: footer-content -->
-*/
 section.footer-content {
     justify-content: flex-end;
 }
 
-/* Content at Top (Default)
-  Usage: <!-- _class: header-content -->
-  Explicitly aligns content to the top.
-*/
 section.header-content {
     justify-content: flex-start;
+}
+
+/* --- Pagination and Footer Elements --- */
+
+.marp-pagination {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: var(--font-secondary);
+    color: var(--color-medium-gray);
+    font-size: 0.9rem;
+}
+
+/* Adds decorative dots above the page number.
+   Usage: <!-- _class: with-progress-dots -->
+*/
+section.with-progress-dots .marp-pagination::before {
+    content: '';
+    display: block;
+    margin: 0 auto 10px; /* Center and add space below */
+    width: 200px;
+    height: 10px;
+    background-image:
+        radial-gradient(circle, var(--color-accent-green) 4px, transparent 5px),
+        radial-gradient(circle, var(--color-accent-teal) 4px, transparent 5px),
+        radial-gradient(circle, var(--color-accent-yellow) 4px, transparent 5px),
+        radial-gradient(circle, var(--color-accent-orange) 4px, transparent 5px),
+        radial-gradient(circle, var(--color-primary-blue) 4px, transparent 5px),
+        radial-gradient(circle, var(--color-light-gray-2) 4px, transparent 5px),
+        radial-gradient(circle, var(--color-light-gray-2) 4px, transparent 5px),
+        radial-gradient(circle, var(--color-light-gray-2) 4px, transparent 5px),
+        radial-gradient(circle, var(--color-light-gray-2) 4px, transparent 5px),
+        radial-gradient(circle, var(--color-light-gray-2) 4px, transparent 5px);
+    background-repeat: no-repeat;
+    background-size: 20px 10px;
+    background-position: 0 0, 20px 0, 40px 0, 60px 0, 80px 0, 100px 0, 120px 0, 140px 0, 160px 0, 180px 0;
 }
