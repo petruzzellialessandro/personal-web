@@ -1,16 +1,16 @@
 /*
-@theme smart-goals
+@theme slidesgo-smart-goals
 @author Gemini
-@version 2.0.0
+@version 1.0.0
 */
 
-/* --- Font Imports (from Smart Goals) --- */
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@400;700&family=Epilogue:wght@400;700&display=swap');
+/* --- Font Imports (from Slidesgo 'SMART Goals Meeting') --- */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@400;700&family=Lexend:wght@400;700&display=swap');
 
 /* --- Default Settings --- */
 @paginate true
 
-/* --- Root Variables (Full Smart Goals Palette) --- */
+/* --- Root Variables (Slidesgo Palette) --- */
 :root {
     /* Colors */
     --color-background: #fbfbfb;
@@ -28,7 +28,7 @@
 
     /* Fonts */
     --font-primary: 'Lexend Mega', sans-serif;
-    --font-secondary: 'Epilogue', sans-serif;
+    --font-secondary: 'Lexend', sans-serif;
 }
 
 /* --- Global Slide Styles --- */
@@ -40,9 +40,14 @@ section {
     padding: 2rem 2.5rem;
 }
 
-/* --- Element Styles (Using Full Palette) --- */
+/* --- Element Styles --- */
 a {
     color: var(--color-primary-blue);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--color-accent-orange);
+    text-decoration: underline;
 }
 
 strong {
@@ -59,34 +64,42 @@ em {
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-primary);
     font-kerning: auto;
+    text-align: left;
 }
 
 h1 {
+    font-size: 52px;
     color: var(--color-dark-gray);
-    border-bottom: 2px solid var(--color-primary-blue);
+    border-bottom: 5px solid var(--color-primary-blue);
+    padding-bottom: 0.25em;
     margin-bottom: 3.5%;
 }
 h2 {
-    color: var(--color-primary-blue);
-    font-size: 32pt;
+    font-size: 40px;
+    color: var(--color-dark-gray);
 }
 h3 {
-    color: var(--color-accent-teal);
+    color: var(--color-primary-blue);
 }
 h4 {
-    color: var(--color-accent-green);
+    color: var(--color-accent-orange);
 }
 
-li {
+ul > li {
     margin: 0.25em 0;
-    line-height: 1.2em;
-    font-size: 1.1em;
+    line-height: 1.3em;
+    font-size: 1em;
+}
+
+ul > li::marker {
+  color: var(--color-primary-blue);
 }
 
 blockquote {
     color: var(--color-text);
     border-left: 4px solid var(--color-primary-blue);
     padding-left: 1em;
+    text-align: left;
 }
 
 figcaption {
@@ -96,27 +109,27 @@ figcaption {
     color: var(--color-medium-gray);
 }
 
-/* --- Custom Slide Classes (Weber Structure, Full Smart Goals Style) --- */
+/* --- Custom Slide Classes --- */
 
-/* Title Page (Styled like Smart Goals 'lead' slide) */
+/* Title Page */
 section.titlepage {
-    background-color: var(--color-dark-gray);
-    text-align: center;
+    background-color: var(--color-background);
+    text-align: left;
     justify-content: center;
 }
 section.titlepage h1, section.titlepage .title {
-    color: var(--color-white) !important;
-    text-align: center !important;
+    color: var(--color-dark-gray) !important;
+    text-align: left !important;
     border: none;
 }
 section.titlepage h2, section.titlepage .subtitle {
-    color: var(--color-light-gray-2) !important;
-    text-align: center !important;
+    color: var(--color-medium-gray) !important;
+    text-align: left !important;
     font-weight: 400;
 }
 section.titlepage h3, section.titlepage .author, section.titlepage .date, section.titlepage .organization {
     color: var(--color-primary-blue) !important;
-    text-align: center !important;
+    text-align: left !important;
     font-size: 0.9em;
 }
 
@@ -134,6 +147,9 @@ section.transition {
     text-align: center;
     justify-content: center;
 }
+section.transition h1 {
+    border: none;
+}
 section.transition a {
     font-size: 1.7em;
     font-weight: 900;
@@ -143,7 +159,7 @@ section.transition strong {
     font-weight: 900;
 }
 
-/* Citation Slide (Now uses Green) */
+/* Citation Slide (Styled with green accent) */
 section.cite {
     background-color: var(--color-accent-green);
     color: var(--color-white);
@@ -164,7 +180,7 @@ section.cite strong {
     border-radius: 4px;
 }
 
-/* Bibliography Slide (Now uses light gray bg and teal headings) */
+/* Bibliography Slide (Styled with light gray bg and teal headings) */
 section.biblio {
     background-color: var(--color-light-gray-1);
 }
@@ -178,14 +194,14 @@ section.biblio li {
     line-height: 24pt;
 }
 
-/* --- Table Styles (Header now uses Teal) --- */
+/* --- Table Styles (Header now uses Primary Blue) --- */
 table {
     width: 100%;
     border-collapse: collapse;
 }
 th {
     font-family: var(--font-primary);
-    background-color: var(--color-accent-teal);
+    background-color: var(--color-primary-blue);
     color: var(--color-white);
     padding: 12px;
 }
