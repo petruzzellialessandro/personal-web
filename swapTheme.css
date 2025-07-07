@@ -1,227 +1,176 @@
-/*
-@theme swapTheme
-@author Gemini
-@version 1.0.0
+/* @theme swapTheme */
+
+/* ---
+   ================================================
+   Theme: swapTheme
+   Author: Gemini (AI Assistant)
+   Version: 1.0
+   Aesthetic: Dark Mode & Tech-Focused
+   ================================================
 */
 
-/* --- Font Imports (from Slidesgo 'SMART Goals Meeting') --- */
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@400;700&family=Lexend:wght@400;700&display=swap');
+/* 1. Font Imports
+   - Roboto: A strong, geometric sans-serif for headings.
+   - Lato: A clean and friendly sans-serif for body text.
+   - JetBrains Mono: A crisp monospaced font for code.
+   ------------------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Lato:wght@400;700&family=Roboto:wght@700;900&display=swap');
 
-/* --- Default Settings --- */
-@paginate true
-
-/* --- Root Variables (Slidesgo Palette) --- */
+/* 2. Root Variables & Color Palette
+   A cohesive and high-contrast color scheme.
+   - Background: Deep, dark navy (#1A1B26)
+   - Text: Soft, readable off-white (#C0CAF5)
+   - Headings: Cool, striking blue (#7AA2F7)
+   - Accent/Links: Vibrant, modern teal (#4FD6BE)
+   - Code Blocks: A distinct dark background (#2A2D46)
+   ------------------------------------------------ */
 :root {
-    /* Colors */
-    --color-background: #fbfbfb;
-    --color-text: #232323;
-    --color-dark-gray: #232323;
-    --color-white: #fbfbfb;
-    --color-light-gray-1: #f1f1f1;
-    --color-light-gray-2: #e0e0e0;
-    --color-medium-gray: #838383;
-    --color-primary-blue: #3280ae;
-    --color-accent-orange: #e45a35;
-    --color-accent-teal: #61b6a1;
-    --color-accent-yellow: #e9b545;
-    --color-accent-green: #8cb847;
+  --color-background: #1A1B26;
+  --color-text: #C0CAF5;
+  --color-heading: #7AA2F7;
+  --color-accent: #4FD6BE;
+  --color-code-bg: #2A2D46;
+  --color-blockquote-border: #565f89;
 
-    /* Fonts */
-    --font-primary: 'Lexend Mega', sans-serif;
-    --font-secondary: 'Lexend', sans-serif;
+  --font-family-heading: 'Roboto', sans-serif;
+  --font-family-body: 'Lato', sans-serif;
+  --font-family-code: 'JetBrains Mono', monospace;
 }
 
-/* --- Global Slide Styles --- */
+/* 3. Global Slide Styles
+   ------------------------------------------------ */
 section {
-    background-color: var(--color-background);
-    font-family: var(--font-secondary);
-    color: var(--color-text);
-    font-size: 30px;
-    padding: 2rem 2.5rem;
+  background-color: var(--color-background);
+  font-family: var(--font-family-body);
+  font-size: 28px;
+  color: var(--color-text);
+  padding: 60px;
 }
 
-/* --- Element Styles --- */
-a {
-    color: var(--color-primary-blue);
-    text-decoration: none;
-}
-a:hover {
-    color: var(--color-accent-orange);
-    text-decoration: underline;
-}
-
-strong {
-    color: var(--color-accent-orange) !important;
-}
-
-em {
-    color: var(--color-dark-gray);
-    background-color: var(--color-accent-yellow);
-    padding: 0.1em 0.3em;
-    border-radius: 4px;
-}
-
+/* 4. Headings (h1 - h6)
+   ------------------------------------------------ */
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-primary);
-    font-kerning: auto;
-    text-align: left;
+  font-family: var(--font-family-heading);
+  color: var(--color-heading);
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
 }
 
 h1 {
-    font-size: 52px;
-    color: var(--color-dark-gray);
-    border-bottom: 5px solid var(--color-primary-blue);
-    padding-bottom: 0.25em;
-    margin-bottom: 3.5%;
+  font-size: 3.2em;
+  padding-bottom: 0.3em;
+  border-bottom: 3px solid var(--color-accent);
 }
+
 h2 {
-    font-size: 40px;
-    color: var(--color-dark-gray);
+  font-size: 2.4em;
+  color: var(--color-accent);
 }
+
 h3 {
-    color: var(--color-primary-blue);
-}
-h4 {
-    color: var(--color-accent-orange);
+  font-size: 1.8em;
+  font-weight: 700;
 }
 
-ul > li {
-    margin: 0.25em 0;
-    line-height: 1.3em;
-    font-size: 1em;
+h4, h5, h6 {
+  font-size: 1.4em;
+  color: var(--color-accent);
+  font-weight: 700;
 }
 
-ul > li::marker {
-  color: var(--color-primary-blue);
+/* 5. Body Text & Links
+   ------------------------------------------------ */
+p {
+  line-height: 1.6;
 }
 
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+/* 6. Lists (Ordered & Unordered)
+   ------------------------------------------------ */
+ul, ol {
+  line-height: 1.7;
+  margin-left: 25px;
+}
+
+ul li::marker {
+  color: var(--color-accent);
+}
+
+/* 7. Code Blocks & Inline Code
+   ------------------------------------------------ */
+pre {
+  background-color: var(--color-code-bg);
+  border-radius: 8px;
+  border: 1px solid var(--color-blockquote-border);
+  padding: 1em;
+  line-height: 1.4;
+  overflow-x: auto;
+  font-size: 0.8em; /* Adjusted for better fit */
+}
+
+code {
+  font-family: var(--font-family-code);
+  font-size: 0.9em;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+/* Inline code style */
+p code, li code {
+  background-color: var(--color-code-bg);
+  color: var(--color-accent);
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
+/* 8. Blockquotes
+   ------------------------------------------------ */
 blockquote {
-    color: var(--color-text);
-    border-left: 4px solid var(--color-primary-blue);
-    padding-left: 1em;
-    text-align: left;
+  border-left: 5px solid var(--color-blockquote-border);
+  padding-left: 20px;
+  font-style: italic;
+  color: #a9b1d6; /* Slightly lighter text */
 }
 
-figcaption {
-    font-size: 0.8em;
-    font-family: var(--font-secondary);
-    text-align: center;
-    color: var(--color-medium-gray);
+/* 9. Images
+   ------------------------------------------------ */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  background-color: #fff; /* White background for transparent images */
 }
 
-/* --- Custom Slide Classes --- */
-
-/* Title Page */
-section.titlepage {
-    background-color: var(--color-background);
-    text-align: left;
-    justify-content: center;
-}
-section.titlepage h1, section.titlepage .title {
-    color: var(--color-dark-gray) !important;
-    text-align: left !important;
-    border: none;
-}
-section.titlepage h2, section.titlepage .subtitle {
-    color: var(--color-medium-gray) !important;
-    text-align: left !important;
-    font-weight: 400;
-}
-section.titlepage h3, section.titlepage .author, section.titlepage .date, section.titlepage .organization {
-    color: var(--color-primary-blue) !important;
-    text-align: left !important;
-    font-size: 0.9em;
+/* 10. Header & Footer
+   ------------------------------------------------ */
+header, footer {
+  position: absolute;
+  left: 60px;
+  right: 60px;
+  font-size: 0.5em;
+  color: #8a93c4; /* Subdued color */
 }
 
-/* Columns Layout */
-section.columns {
-    column-count: 2;
-    column-gap: 2rem;
-}
-section.columns > h1, section.columns > h2 {
-    column-span: all;
+header {
+  top: 30px;
 }
 
-/* Transition Slide */
-section.transition {
-    text-align: center;
-    justify-content: center;
-}
-section.transition h1 {
-    border: none;
-}
-section.transition a {
-    font-size: 1.7em;
-    font-weight: 900;
-}
-section.transition strong {
-    font-size: 1.1em;
-    font-weight: 900;
-}
-
-/* Citation Slide (Styled with green accent) */
-section.cite {
-    background-color: var(--color-accent-green);
-    color: var(--color-white);
-    font-weight: 400 !important;
-    text-align: center;
-    justify-content: center;
-}
-section.cite p {
-    font-family: var(--font-secondary);
-    font-size: 1.5em;
-    line-height: 1.4em;
-    padding: 50pt 100px;
-}
-section.cite strong {
-    color: var(--color-white);
-    background-color: rgba(0,0,0,0.1);
-    padding: 0.1em 0.3em;
-    border-radius: 4px;
-}
-
-/* Bibliography Slide (Styled with light gray bg and teal headings) */
-section.biblio {
-    background-color: var(--color-light-gray-1);
-}
-section.biblio h1 {
-    font-size: 36px;
-    border-bottom-color: var(--color-accent-teal);
-    color: var(--color-accent-teal);
-}
-section.biblio li {
-    font-size: 20pt !important;
-    line-height: 24pt;
-}
-
-/* --- Table Styles (Header now uses Primary Blue) --- */
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-th {
-    font-family: var(--font-primary);
-    background-color: var(--color-primary-blue);
-    color: var(--color-white);
-    padding: 12px;
-}
-td {
-    border: 1px solid var(--color-light-gray-2);
-    font-family: var(--font-secondary);
-    padding: 12px;
-    color: var(--color-text);
-}
-tr:nth-child(even) {
-    background-color: #f8f8f8;
-}
-
-/* --- Pagination --- */
-.marp-pagination {
-    color: var(--color-medium-gray);
-    font-size: 0.8em;
-    width: auto;
-    right: 30px;
-    left: auto;
-    top: auto;
-    bottom: 20px;
+footer {
+  bottom: 30px;
 }
